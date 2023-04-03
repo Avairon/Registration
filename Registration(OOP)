@@ -1,0 +1,75 @@
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+#include <fstream>
+#include <locale.h>
+
+#define CRT_SECURE_NO_WARNINGS
+
+//D:\
+
+using namespace std;
+
+class member {
+public:
+    string login, password;
+    member() {
+
+    }
+    member(string Login, string Password) {
+        login = Login;
+        password = Password;
+    }
+};
+
+string write() {}
+
+string read() {}
+
+int main()
+{
+
+    string log, pass;
+
+    int choose;
+    cout << "Choose action: 1 - autorisation; 2 - registration; \n";
+    cin >> choose;
+
+    member *user = new member;
+
+    switch (choose) {
+    case(1):
+        cout << "Enter login\n";
+        cin >> user->login;
+        cout << "Enter password\n";
+        cin >> user->password;
+        
+        cout << "Searching...\n";
+        while (user->login != log or user->password != pass) {
+
+            log = read();
+            pass = read();
+
+            if (log == "" && pass == "") {
+                cout << "Account not alive!";
+                break;
+            }
+        }
+        break;
+    case(2):
+        cout << "Enter login\n";
+        cin >> user->login;
+        cout << "Enter password\n";
+        cin >> user->password;
+
+        cout << "Creating...\n";
+        
+        write(user->login);
+        write(user->password);
+        write();
+
+        cout << "You account was created!\n";
+
+        break;
+    }
+}
